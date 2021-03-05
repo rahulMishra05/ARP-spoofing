@@ -1,6 +1,7 @@
 import scapy.all as scapy
 import time
 import sys
+import termcolor
 
 
 def get_mac_address(ip_address):
@@ -37,5 +38,5 @@ try:
         spoof(router_ip, target_ip, router_mac, target_mac)
         time.sleep(2)           # With the help of this command we will send ARP packets every 2 seconds
 except KeyboardInterrupt:
-    print("[-] Closing APR spoofer...")
+    print(termcolor.colored(("[-] Closing APR spoofer..."), 'red'))
     exit(0)
