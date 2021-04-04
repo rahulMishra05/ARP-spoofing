@@ -38,3 +38,7 @@ It is able to forge or decode packets of a wide number of protocols, send them o
         ```shell
         sudo python3 arp_spoofer.py 8.8.8.8 5.5.5.5
         ```
+6. ***Note:*** *If after spoofing, the target machine cannot use the internet this means that we have successfully spoofed the target machine, but we are not forwarding the packets. So to remove this problem run this command before executing the python script.*
+    ```shell
+    echo 1 >> /proc/sys/net/ipv4/ip_forward
+    ```
